@@ -2,7 +2,6 @@ package main
 
 // My stab at some Project Euler problems.
 
-
 import (
 	"flag"
 	"fmt"
@@ -15,11 +14,10 @@ var q = flag.Int("q", 0, "The question to run")
 var answers = make(map[int]func(), 0)
 
 func main() {
-  flag.Parse()
-  if *q == 0 {
-    panic("must provide a question number")
-  }
+	flag.Parse()
+	if *q == 0 {
+		panic("must provide a question number")
+	}
 
-  answers[*q]()
+	answers[*q]()
 }
-
