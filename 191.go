@@ -1,7 +1,7 @@
 package main
 
 // This solution uses a recursive tree walking function that only explores valid paths.
-func (e Euler) Problem192() {
+func (e Euler) Problem191() {
 	var winners int
 	var walker func(depth, l, a int)
 
