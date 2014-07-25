@@ -3,6 +3,7 @@ package main
 func init() {
 	var winners int
 
+	// This solution uses a recursive tree walking function that only explores valid paths.
 	answers[192] = func() {
 		var walker func(depth, l, a int)
 
