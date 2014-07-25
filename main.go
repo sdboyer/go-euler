@@ -5,19 +5,21 @@ package main
 import (
 	"flag"
 	"fmt"
+	"reflect"
 )
 
 var fml = fmt.Println
 
-var q = flag.Int("q", 0, "The question to run")
+var q = flag.String("q", "", "The question to run")
 
-var answers = make(map[int]func(), 0)
+type Euler uintptr
 
 func main() {
 	flag.Parse()
-	if *q == 0 {
+	if *q == "" {
 		panic("must provide a question number")
 	}
 
-	answers[*q]()
+	var e Euler
+	reflect.ValueOf(e).MethodByName("Problem" + *q).Call(make([]reflect.Value,0))
 }
